@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <title>DND Character Manager</title>
+</head>
+<body>
+    <ul class="tabs">
+        <li data-tab-target="#home" class="active tab">Home</li>
+        <li data-tab-target="#characters" class="tab">Characters</li>
+        <li data-tab-target="#about" class="tab">About</li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" data-tab-content class="active">
+	    {{ home_content | safe }}
+        </div>
+        <div id="characters" data-tab-content>
+	    {{ character_content | safe }}
+        </div>
+        <div id="about" data-tab-content>
+            <p>I created this as a way to practice Python and formulas, and learn how to export to Google Sheets</p>
+        </div>
+    </div>
+</body>
+</html>
+

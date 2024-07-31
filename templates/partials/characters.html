@@ -1,0 +1,18 @@
+<div>
+	{% if character_id %}
+	<h2>View and Edit Character</h2>
+	<form action="{{ url_for('character_bp.edit_character', character_id = character[0]) }}" method="post">
+    		<label for="name">Character Name:</label>
+    		<input type="text" id="name" name="name" value="{{ character[1] }}">
+    		<br>
+    		<label for="speed">Speed:</label>
+    		<input type="text" id="speed" name="speed" value="{{ character[2] }}">
+    		<br>
+    		<input type="submit" value="Save Changes">
+    		<input type="button" value="Cancel" onclick="window.location.href='{{ url_for('character_bp.character_management') }}'">
+	</form>
+	{% else %}
+	<h2>View and Edit Character</h2>
+	<p>"You do not have any characters"</p>
+	{% endif %}
+</div>

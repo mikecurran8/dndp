@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Character Management{% endblock %}
+
+{% block content %}
+<h1>Character Management</h1>
+<ul>
+    {% for character in characters %}
+        <li>
+            Name: {{ character[1] }} 
+	    <a href="{{ url_for('character_bp.edit_character', character_id = character[0]) }}">Edit</a> 
+	    <a href="{{ url_for('character_bp.view_character', character_id = character[0]) }}">View</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('character_bp.create_character') }}">Create New Character</a>
+{% endblock %}
+

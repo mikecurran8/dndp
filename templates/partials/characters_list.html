@@ -1,0 +1,12 @@
+    <div>
+	    <h2>Character List</h2>
+	    <ul>
+    		{% for character in characters %}
+        		<li>
+				<a href="{{ url_for('character_bp.edit_character', character_id = character[0]) }}">{{ character[1] }}</a>
+        		</li>
+    		{% endfor %}
+	   </ul>
+	   <a href="{{ url_for('character_bp.create_character') }}">Create New Character</a>
+    </div>
+

@@ -1,0 +1,6 @@
+{% if 'user_id' in session %}
+    {{ characters_list | safe }}
+    {% include 'partials/logout.html' %}
+{% else %}
+    {% include 'partials/login.html' %}
+{% endif %}
