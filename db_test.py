@@ -3,7 +3,7 @@ import hvac
 def get_db_credentials():
     # Initialize the Vault client
     client = hvac.Client(url='http://192.168.7.44:8200')
-    client.token = 'hvs.Z7aVfUBXlUa2tFMkKkV5okbT'  # Replace with your actual token or secure method to retrieve it
+    client.token = ''  # Replace with your actual token or secure method to retrieve it
     
     # Read the secret from Vault
     secret = client.secrets.kv.v2.read_secret_version(path='dnd')

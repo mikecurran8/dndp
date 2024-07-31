@@ -5,7 +5,7 @@ from mysql.connector import errorcode
 # Function to get database credentials from Vault
 def get_db_credentials():
     client = hvac.Client(url='http://192.168.7.44:8200')
-    client.token = 'hvs.Z7aVfUBXlUa2tFMkKkV5okbT'  # Replace with your actual token or method to retrieve it securely
+    client.token = ''  # Replace with your actual token or method to retrieve it securely
     secret = client.secrets.kv.v2.read_secret_version(path='dnd')
     credentials = secret['data']['data']
     return credentials
